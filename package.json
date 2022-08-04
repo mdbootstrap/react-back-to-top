@@ -1,8 +1,7 @@
 {
-  "name": "mdb-react-template",
-  "version": "4.0.0",
+  "name": "@mdbootstrap/react-back-to-top",
+  "version": "1.0.0",
   "description": "template for mdb-react-ui-kit",
-  "private": true,
   "dependencies": {
     "mdb-react-ui-kit": "^4.0.0",
     "react": "^18.1.0",
@@ -18,8 +17,19 @@
     "eject": "react-scripts eject"
   },
   "keywords": [
+    "react",
     "template",
-    "react"
+    "bootstrap",
+    "bootstrap5",
+    "bootstrap-template",
+    "bootstrap-theme",
+    "template",
+    "select",
+    "scrollbar",
+    "scrollspy",
+    "css",
+    "html",
+    "js"
   ],
   "author": "MDBootstrap",
   "license": "MIT",
@@ -34,5 +44,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdbootstrap/react-back-to-top.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mdbootstrap/react-back-to-top/issues"
+  },
+  "homepage": "https://mdbootstrap.com/docs/react/extended/back-to-top"
 }
