@@ -2,14 +2,14 @@ import React from "react";
 import { MDBBtn, MDBContainer, MDBIcon } from "mdb-react-ui-kit";
 
 function Basic() {
-  let mybutton = document.getElementById("btn-back-to-top");
+  let mybutton;
 
   window.onscroll = function () {
-    mybutton.style.display = "none";
-    scrollFunction();
+    mybutton = document.getElementById("btn-back-to-top");
+    scrollFunction(mybutton);
   };
 
-  function scrollFunction() {
+  function scrollFunction(mybutton) {
     if (
       document.body.scrollTop > 20 ||
       document.documentElement.scrollTop > 20
@@ -52,6 +52,15 @@ function Basic() {
 
         <p>Click this button and you will be taken to the top of the page.</p>
       </div>
+
+      <link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        rel="stylesheet"
+      />
     </MDBContainer>
   );
 }
