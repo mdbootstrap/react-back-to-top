@@ -2,194 +2,123 @@
 
 # MDB React 5
 
-### React 17 & Bootstrap 5 & Material Design 2.0 UI KIT
+Scroll Back To Top link built with Bootstrap 5. Create a button that appears when you start scrolling and on click smooth scrolls you to the top of the page.
 
-**[>> Get Started in 4 steps](https://mdbootstrap.com/docs/b5/react/getting-started/installation/)**
+Check out [React Scroll Back To Top Documentation](https://mdbootstrap.com/docs/b5/react/extended/back-to-top/) for detailed instructions & even more examples.
 
-**[>> MDBReact 5 Demo](https://mdbootstrap.com/docs/b5/react#demo)**
+## Basic example (Click on the image to see a live demo)
+[![React Scroll Back To Top Basic Example](https://user-images.githubusercontent.com/108793661/182842001-c85489a0-9a23-4462-86be-bb2441011166.png)](https://mdbootstrap.com/docs/react/extended/back-to-top#section-basic-example)
+```js
+import React from 'react';
+import { MDBBtn, MDBContainer, MDBIcon } from 'mdb-react-ui-kit';
 
-<a href="https://npmcharts.com/compare/mdb-react-ui-kit?minimal=true"> <img src="https://img.shields.io/npm/dw/mdb-react-ui-kit" alt="Downloads"></a>
-<a href="https://github.com/mdbootstrap/mdb-react-ui-kit/License.pdf"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
-<a href="https://twitter.com/intent/tweet/?text=Thanks+@mdbootstrap+for+creating+amazing+and+free+Material+Design+for+Bootstrap+4+UI+KIT%20https://mdbootstrap.com/docs/jquery/&hashtags=javascript,code,webdesign,bootstrap"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Let%20us%20know%20you%20were%20here%21&"></a>
-<a href="https://www.youtube.com/watch?v=c9B4TPnak1A&t=6s"><img alt="YouTube Video Views" src="https://img.shields.io/youtube/views/c9B4TPnak1A?label=Bootstrap%205%20Tutorial%20Views&style=social"></a>
+function App() {
+  let mybutton;
 
----
+  window.onscroll = function () {
+    mybutton = document.getElementById("btn-back-to-top");
+    scrollFunction(mybutton);
+  };
 
-<table>
-  <tbody>
-    <tr>
-      <td>
-          <a href="https://mdbootstrap.com/docs/b5/react/" alt="Bootstrap 5" rel="dofollow">
-          		<img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/standard/about/assets/mdb5-about.jpg">
-          </a>
-      </td>
-      <td>
-        <ul>
-        <li><b>500+ material UI components</b></li>
-         <li>Super simple, 1 minute installation</li>
-         <li>Detailed docs & multiple practical examples</li>
-         <li>React 17</li>
-         <li>Huge and active community</li>
-         <li><b>MIT license - free for personal & commercial use</b></li>
-        </ul>
-      </td>
-    </tr>
-   </tbody>
-</table>
+  function scrollFunction(mybutton) {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
 
-Trusted by <b>2 000 000+</b> developers & designers. Used by companies like
+  function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
 
-<table>
-  <tbody>
-    <tr>
-      <td><img src="https://mdbootstrap.com/img/logo/brands/nike.png" style="width: 10px;"></td>
-      <td><img src="https://mdbootstrap.com/img/logo/brands/amazon.png" style="width: 10px;"></td>
-      <td><img src="https://mdbootstrap.com/img/logo/brands/sony.png" style="width: 10px;"></td>
-      <td><img src="https://mdbootstrap.com/img/logo/brands/samsung.png"  style="height: 40px">
-      <td><img src="https://mdbootstrap.com/img/logo/brands/airbus.png" style="height: 40px">
-      <td><img src="https://mdbootstrap.com/img/logo/brands/yahoo.png"  style="height: 40px">
-      <td><img src="https://mdbootstrap.com/img/logo/brands/deloitte.png" style="height: 40px"></div>
-      <td><img src="https://mdbootstrap.com/img/logo/brands/ge.png" style="height: 40px">
-      <td><img src="https://mdbootstrap.com/img/logo/brands/kpmg.png" style="height: 40px">
-      <td><img src="https://mdbootstrap.com/img/logo/brands/unity.png" style="height: 40px">
-      <td><img src="https://mdbootstrap.com/img/logo/brands/ikea.png" style="max-height: 40px">
-      <td><img src="https://mdbootstrap.com/img/logo/brands/aegon.png" style="height: 40px">
-    </tr>
-   </tbody>
-</table>
+  return (
+    <MDBContainer fluid>
 
----
 
-###### Tutorial for the latest Bootstrap v.5 Alpha. In this video we'll learn about the changes implemented into v.5.
+      <MDBBtn 
+        onClick={backToTop} 
+        id='btn-back-to-top' 
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          display: "none",
+        }} 
+        className='btn-floating' 
+        color='danger' 
+        size='lg'>
+        <MDBIcon fas icon="arrow-up" />
+      </MDBBtn>
 
-**[>> Click here for a written tutorial](https://mdbootstrap.com/docs/b5/react/getting-started/quick-start/)**
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center">
-          		<img src="https://mdbootstrap.com/wp-content/uploads/2020/12/learnmore-1.png">
-          </a>
-      </td>
-      <td>
-          <a href="https://mdbootstrap.com/docs/b5/react/bootstrap-5-tutorial/#section-beginner" alt="Bootstrap 5" rel="dofollow">
-          		<img src="https://mdbootstrap.com/wp-content/uploads/2020/12/cover-bootstrap-5-1.png">
-          </a>
-      </td>
-    </tr>
-     <tr>
-        <td align="center">
-          <p align="center"><b>Start to Code</b></p>
-          <a href="https://mdbootstrap.com/docs/b5/react/bootstrap-5-tutorial/#section-beginner" alt="Bootstrap 5" rel="dofollow">
-          		<img src="https://mdbootstrap.com/wp-content/uploads/2020/12/Screenshot_26.png">
-          </a>
-         </td>
-        <td align="center">
-          <p align="center"><b>Learn Bootstrap 5 | Crash Course for Beginners in 1.5H</b></p>
-          <a href="https://mdbootstrap.com/docs/b5/react/bootstrap-5-tutorial/#section-beginner" alt="Bootstrap 5" rel="dofollow">
-          		<img src="https://mdbootstrap.com/wp-content/uploads/2020/12/Screenshot_26.png">
-          </a>
-         </td>
-      </tr>
-   </tbody>
-</table>
+      <div className="container mt-4 text-center" style={{height: '2000px'}}>
+        <p>
+          Start scrolling the page and a strong
+          <strong> "Back to top" button </strong> will appear in the
+          <strong> bottom right corner</strong> of the screen.
+        </p>
 
----
+        <p>
+          Click this button and you will be taken to the top of the page.
+        </p>
+      </div>
 
-# Demo
+      <link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        rel="stylesheet"
+        />
+      <link
+        href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        rel="stylesheet"
+        />
 
-#### Simplicity and ease of use are key features of MDBReact 5 UI Kit. You need only one minute to install and run it.
 
-### Buttons
+    </MDBContainer>
+  );
+}
 
-<p>Use MDB custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.</p>
+export default App;
+```
+## How to use?
 
-<a href="https://mdbootstrap.com/docs/b5/react/components/buttons/" alt="Bootstrap 5" rel="dofollow">
-  <p align="center">
-    <img src="https://mdbootstrap.com/img/Marketing/campaigns/demo-buttons.gif">
-  </p>
-</a>
+1. Download MDB 5 - free REACT UI KIT
 
-<a href="https://mdbootstrap.com/docs/b5/react/components/buttons/" alt="Bootstrap 5" rel="dofollow">
-  <p align="center">
-    <img src="https://mdbootstrap.com/img/Marketing/campaigns/demo-social-buttons.png">
-  </p>
-</a>
+2. Choose your favourite customized component and click on the image
 
-<a href="https://mdbootstrap.com/docs/b5/react/components/buttons/" alt="Bootstrap 5" rel="dofollow">
-  <p align="center">
-    <img src="https://mdbootstrap.com/img/Marketing/campaigns/demo-buttons2.png">
-  </p>
-</a>
+3. Copy & paste the code into your MDB project
 
-<a href="https://mdbootstrap.com/docs/b5/react/components/buttons/" alt="Bootstrap 5" rel="dofollow">
-  <p align="center">
-    <img src="https://mdbootstrap.com/img/Marketing/campaigns/demo-buttons-outline.gif">
-  </p>
-</a>
+[▶️ Subscribe to YouTube channel for web development tutorials & resources](https://www.youtube.com/MDBootstrap?sub_confirmation=1)
 
-### Spinners
-
-<p>Indicate the loading state of a component or page with MDB spinners, built entirely with HTML, CSS, and no JavaScript.</p>
-
-<a href="https://mdbootstrap.com/docs/b5/react/components/spinners/" alt="Bootstrap 5" rel="dofollow">
-  <p align="center">
-    <img src="https://mdbootstrap.com/img/Marketing/campaigns/demo-loader.gif">
-  </p>
-</a>
-
-<a href="https://mdbootstrap.com/docs/b5/react/components/spinners/" alt="Bootstrap 5" rel="dofollow">
-  <p align="center">
-    <img src="https://mdbootstrap.com/img/Marketing/campaigns/demo-color-spinners.gif">
-  </p>
-</a>
-
-### Cards
-
-<p>A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
-
-<a href="https://mdbootstrap.com/docs/b5/react/components/cards/" alt="Bootstrap 5" rel="dofollow">
-  <p align="center">
-    <img src="https://mdbootstrap.com/img/Marketing/campaigns/demo-cards.png">
-  </p>
-</a>
-
-### Footer
-
-<p>A footer is an additional navigation component. It can hold links, buttons, company info, copyrights, forms, and many other elements.</p>
-
-<a href="https://mdbootstrap.com/docs/b5/react/navigation/footer/" alt="Bootstrap 5" rel="dofollow">
-  <p align="center">
-    <img src="https://mdbootstrap.com/img/Marketing/campaigns/demo-footer.png">
-  </p>
-</a>
-
-### Hover
-
-<p>MDB hover effect appears when the user positions the computer cursor over an element without activating it. Hover effects make a website more interactive.</p>
-
-<a href="https://mdbootstrap.com/docs/b5/react/content-styles/hover-effects/" alt="Bootstrap 5" rel="dofollow">
-  <p align="center">
-    <img src="https://mdbootstrap.com/img/Marketing/campaigns/demo-hover.gif">
-  </p>
-</a>
-
-<a href="https://mdbootstrap.com/docs/b5/react/content-styles/hover-effects/" alt="Bootstrap 5" rel="dofollow">
-  <p align="center">
-    <img src="https://mdbootstrap.com/img/Marketing/campaigns/demo-hover2.png">
-  </p>
-</a>
-
-### Notes
-
-<p>Notes are small components very helpful in inserting an additional piece of information.</p>
-
-<a href="https://mdbootstrap.com/docs/b5/react/content-styles/typography/" alt="Bootstrap 5" rel="dofollow">
-  <p align="center">
-    <img src="https://mdbootstrap.com/img/Marketing/campaigns/demo-alerts.png">
-  </p>
-</a>
-
-</table>
-
-and more.
+## More extended React documentation
+<ul>
+<li><a href="https://mdbootstrap.com/docs/react/extended/code/">React Bootstrap Code</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/gallery/">React Bootstrap Gallery</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/hamburger-menu/">React Bootstrap Hamburger Menu</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/jumbotron/">React Bootstrap Jumbotron</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/maps/">React Bootstrap Maps</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/mega-menu//">React Bootstrap Mega Menu</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/media-object/">React Bootstrap Media object</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/multiselect/">React Bootstrap Multiselect</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/masonry/">React Bootstrap Masonry</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/contact/">React Bootstrap Contact form</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/gradients/">React Bootstrap Gradients</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/pagination/">React Bootstrap Pagination</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/panels/">React Bootstrap Panels</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/social-media/">React Bootstrap Social Media icons & buttons</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/search/">React Bootstrap Search</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/table-sort/">React Bootstrap Table sort</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/table-responsive/">React Bootstrap Table responsive</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/table-scroll/">React Bootstrap Table scroll</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/table-search/">React Bootstrap Table search</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/textarea/">React Bootstrap Textarea</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/sidebar/">React Bootstrap Sidebar</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/profiles/">React Bootstrap Profiles</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/dropdown-multilevel/">React Bootstrap Nested Dropdown</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/bootstrap-address-form/">React Bootstrap Address Form</a></li>
+<li><a href="https://mdbootstrap.com/docs/react/extended/registration-form/">React Bootstrap Address Form</a></li>
+</ul>
